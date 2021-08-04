@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/all.css">
+    <title>Random Picker</title>
+</head>
+
+<body>
+    <div class="wrap p-5 container" id="app">
+        <div class="d-flex flex-column">
+            <h1 class="h1 fw-bold text-theme-main list-theme-secondary d-inline-block ">Random Picker: <span
+                    class="text-theme-secondary">Simplify</span> your life </h1>
+            <div class="input-group mt-5">
+                <span class="input-group-text">Add Item List</span>
+                <textarea v-model="nameString" class="form-control" aria-label="Add Name List" placeholder="Add the item list you want to pick randomly... "></textarea>
+            </div>
+            <p class="mt-2 text-theme-main">Note: The item should be seperated by comma. </p>
+            <div class="input-group mt-5">
+                <span class="input-group-text">Number of items to pick</span>
+                <input v-model.number="nameNum" type="number" class="form-control" aria-label="Number of Selecting Name">
+                
+              </div>
+            
+        </div>
+        <a class="btn btn-dark mt-5" href="#" @click.prevent="getRandomName">Get Random Name</a>
+
+        <h2 class="h2 fw-bold text-theme-main list-theme-secondary mt-5">Random Item <span
+            class="text-theme-secondary">List</span>：</h1>
+        <ul class="ms-5 mt-5 fs-3 d-flex flex-wrap">
+            <li class="text-theme-main ms-3" v-for="num in randomList">❤{{nameList[num]}}</li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="all.js"> </script>
+</body>
+
+</html>

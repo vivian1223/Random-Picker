@@ -1,0 +1,6 @@
+@each $color in $color-list {
+    .list-#{$color}{
+        padding-left: 15px;
+        border-left: 5px map-get($color-map, $color) solid;
+    }
+}
